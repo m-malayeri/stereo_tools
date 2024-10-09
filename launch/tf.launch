@@ -1,0 +1,10 @@
+<launch>
+    <param name="/use_sim_time" value="false" />
+    <node pkg="stereo_data_publisher" type="data_publisher_node" name="irs_data_publisher"/>    
+    <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher1" args="0 1 0 -0.71 0 0 0.71 world cam0 15"/>
+    <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher2" args="0.1 0 0 0 0 0 cam0 cam1 15"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d /home/cam2pcl.rviz" />    
+</launch>
+
+
+    <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher1" args="0 0 0 -0.71 0 0 0.71 cam0 odom 15"/>
